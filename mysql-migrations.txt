@@ -1,0 +1,26 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `modified_on` varchar(20) NOT NULL,
+  `created_at` varchar(20) NOT NULL,
+  `verified` smallint(4) NOT NULL,
+  `secret_token` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `checks` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `url` varchar(20) NOT NULL,
+  `url_status` varchar(20) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `protocol` varchar(20) NOT NULL,
+  `path` varchar(20) DEFAULT NULL,
+  `port` int(11) DEFAULT NULL,
+  `webhook` varchar(20) DEFAULT NULL,
+  `timeout` int(11) DEFAULT NULL,
+  `check_interval` int(11) DEFAULT NULL,
+  `threshold` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
